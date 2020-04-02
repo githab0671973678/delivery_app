@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @courier.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @courier.email %>
+</p>
+
+<p>
+  <strong>Packages:</strong>
+  <%- @courier.packages.each do |package|%>
+    <%= link_to package.tracking_number, courier_package_path(id: package.id, courier_id: @courier.id) %>
+  <%end%>
+</p>
+
+
+
+<%= link_to 'Edit', edit_courier_path(@courier) %> |
+<%= link_to 'Add package',  new_courier_package_path(@courier) %> |
+<%= link_to 'Back', couriers_path %>

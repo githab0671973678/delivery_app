@@ -1,0 +1,6 @@
+<h1>Editing Package</h1>
+
+<%= render 'form', package: @package %>
+
+<%= link_to 'Show', courier_package_path(id: @package.id) %> |
+<%= link_to 'Back', courier_packages_path %>
